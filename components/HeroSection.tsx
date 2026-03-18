@@ -7,8 +7,19 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-28 pb-10 overflow-hidden">
-      {/* Background glow effects */}
-      <div className="absolute inset-0 bg-brand-dark">
+      {/* Background Video and Glow effects */}
+      <div className="absolute inset-0 bg-brand-dark overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+        
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-orange/10 blur-[120px] pointer-events-none" />
         <div className="absolute top-1/2 left-1/4 w-[300px] h-[300px] rounded-full bg-brand-red/8 blur-[80px] pointer-events-none" />
         <div className="absolute top-1/2 right-1/4 w-[300px] h-[300px] rounded-full bg-brand-gold/6 blur-[80px] pointer-events-none" />
