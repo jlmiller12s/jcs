@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-red: #d42b2b;
+  --brand-orange: #e85a1b;
+  --brand-gold: #f0ac3c;
+  --brand-charcoal: #1a1008;
+  --brand-dark: #0d0a04;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0d0a04;
+  color: #fdf5e4;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1008;
+}
+::-webkit-scrollbar-thumb {
+  background: #e85a1b;
+  border-radius: 2px;
+}
+
+/* Utility classes */
+@layer utilities {
+  .text-shadow-gold {
+    text-shadow: 0 0 30px rgba(240, 172, 60, 0.6);
+  }
+  .text-shadow-flame {
+    text-shadow: 0 0 20px rgba(232, 90, 27, 0.8);
+  }
+  .glow-orange {
+    box-shadow: 0 0 20px rgba(232, 90, 27, 0.5), 0 0 40px rgba(232, 90, 27, 0.2);
+  }
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(240, 172, 60, 0.4), 0 0 40px rgba(240, 172, 60, 0.15);
+  }
+  .card-dark {
+    background: linear-gradient(135deg, rgba(26, 16, 8, 0.95), rgba(17, 14, 6, 0.98));
+    border: 1px solid rgba(240, 172, 60, 0.1);
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes flamePulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(232, 90, 27, 0.4), 0 0 40px rgba(212, 43, 43, 0.2); 
+  }
+  50% { 
+    box-shadow: 0 0 35px rgba(232, 90, 27, 0.7), 0 0 60px rgba(212, 43, 43, 0.4); 
+  }
+}
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-slide-up { animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+.animate-fade-in { animation: fadeIn 0.4s ease-out; }
+.animate-scale-in { animation: scaleIn 0.3s ease-out; }
+.animate-flame-pulse { animation: flamePulse 2s ease-in-out infinite; }
+
+/* Shimmer button effect */
+.btn-shimmer {
+  background: linear-gradient(135deg, #e85a1b 0%, #f0ac3c 50%, #e85a1b 100%);
+  background-size: 200% auto;
+  transition: background-position 0.5s ease;
+}
+.btn-shimmer:hover {
+  background-position: right center;
+}
+
+/* Tag badges */
+.tag-fastest { background: #e85a1b; color: white; }
+.tag-fan-favorite { background: #d42b2b; color: white; }
+.tag-best-deal { background: #f0ac3c; color: #0d0a04; }
+.tag-protein-pick { background: #22c55e; color: white; }
+.tag-sweet-pick { background: #a855f7; color: white; }
+.tag-car-ready { background: #3b82f6; color: white; }
+.tag-solo-pick { background: #64748b; color: white; }
+.tag-kid-approved { background: #06b6d4; color: white; }
+.tag-past-order { background: #2A1F18; color: #f0ac3c; border-bottom: 1px solid rgba(240, 172, 60, 0.2); }
+
+/* Bottom sheet overlay */
+.sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+}
+
+/* Step transitions */
+.step-container {
+  animation: fadeIn 0.4s ease-out;
+}
