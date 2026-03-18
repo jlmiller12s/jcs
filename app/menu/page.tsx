@@ -44,7 +44,7 @@ export default function MenuPage() {
               <h1 className="text-4xl md:text-6xl font-black text-brand-gold uppercase tracking-tighter shadow-sm w-fit mx-auto" style={{ textShadow: "0 4px 10px rgba(0,0,0,0.5)" }}>
                 MOODS
               </h1>
-              <p className="text-brand-cream/60 mt-2 font-medium">Curated packs for however you're feeling.</p>
+              <p className="text-brand-cream/60 mt-2 font-medium">Curated packs for however you&apos;re feeling.</p>
             </div>
 
             {MOODS.map((mood) => {

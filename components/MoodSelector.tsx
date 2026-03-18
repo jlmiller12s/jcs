@@ -21,7 +21,7 @@ export default function MoodSelector() {
           <span className="text-brand-gold">Feeling?</span>
         </h2>
         <p className="text-brand-cream/50 text-base">
-          Pick your vibe. We'll handle the rest.
+          Pick your vibe. We&apos;ll handle the rest.
         </p>
       </div>
 
