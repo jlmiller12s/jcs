@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { OrderProvider } from "@/context/OrderContext";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Jimmy's Chicken Shack — Late Night Quick Pick",
@@ -28,6 +29,7 @@ export default function RootLayout({
       </head>
       <body className="bg-brand-dark text-brand-cream min-h-screen">
         <OrderProvider>{children}</OrderProvider>
+        <Analytics />
       </body>
     </html>
   );
